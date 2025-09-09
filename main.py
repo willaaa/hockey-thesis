@@ -43,7 +43,7 @@ df_win = pd.read_csv('faceoff_wins_by_season.csv',index_col=0)
 df = df_faceoff.merge(df_win, on=['player_id','season'], how='left')
 df = df[df['season'] > 20042005]
 df['actual_win_pct'] = df['faceOffWins'] / df['faceoffTaken']
-sim_results = simulate_random_fow_percent(df, n_simulations=1000) #merge these back together or some bs
+sim_results = simulate_random_fow_percent(df, n_simulations=1000) #merge these back together
 print('boink')
 
 
