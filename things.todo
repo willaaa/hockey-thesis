@@ -1,0 +1,35 @@
+why does nhl start 05-06? should I do the same?
+
+1. graph win % over time, naive model is skill is 1 - this
+2. luck + skill + home vs away
+
+
+Step 2 - Figure out each team’s winning percentage.
+
+Step 3 - Figure out the standard deviation of that winning percentage.
+
+I just did it quick, and I took the last few years in the NFL, and the SD is .19, which makes var(observed) = .19^2
+
+Step 4 - Figure out the random standard deviation. That’s easy: sqrt(.5*.5/16)
+
+16 is the number of games for each team.
+
+So, var(random) = .125^2
+
+Solve for:
+var(obs) = var(true) + var(rand)
+
+var(true), in this case, is .143^2
+
+Knowing that var(true) is .143, to get an “r” of .50, you need var(rand) to also be .143. For that to happen, the number of games played equals 12. That is sqrt(.5*.5/12)= .144
+
+In baseball, var(true) is .060.
+
+
+https://www.insidethebook.com/ee/index.php/site/comments/true_talent_levels_for_sports_leagues/
+
+so
+1) each player's winning %
+2) each player's standard deviation
+3) random standard deviation (sqrt(.5*.5/n))
+4) solve for var(true) where var(obs) = var(true) + var(rand)
